@@ -1,0 +1,45 @@
+<h2><%= @total_down  %>Mib/s | <%= @total_up %>Mib/s :: <%= @bw_down %>TiB | <%=@bw_up%>TiB</h2>
+<div class="groups">
+  <% @groups.each do |group| %>
+    <div class="group_wrap">
+      <div class="group" <%= raw(group.column_width) %>>
+        <h3><%= group.name %></h3>
+        <h4><%= group.bandwidth[:text] %></h4>
+        <h4><%= (group.bandwidth[:bw_down]*1024).round(2) %>GiB | <%= (group.bandwidth[:bw_up]*1024).round(2) %>GiB</h4>
+
+        <div class="switches">
+          <div class="switch_group">
+            <% sort_level(group.switches.order(:description)).each do |switch| %>
+              <div class="switch level_<%=switch.level%> <%= (!switch.alive && switch.group_id != 1) ? 'dead' : '' %>">
+
+                <% if switch.in_speed / 1024 > 40 && switch.in_speed / 1024 < 80 %>
+                  <div class="someload"></div>
+                <% end %>
+                
+                <% if switch.out_speed / 1024 > 40 && switch.out_speed / 1024 < 80 %>
+                  <div class="someload"></div>
+                <% end %>
+
+                <% if switch.in_speed / 1024 > 80 || switch.out_speed / 1024 > 80 %>
+                  <div class="highload"></div>
+                <% end %>
+
+                <div class="blob <%=switch.uptime_css_class %>"></div>
+                <div class="content">
+                  <%= link_to '',edit_switch_path(switch), class: 'switch', remote: true %>
+                  <div class="desc"><%= switch.description %></div>
+                  <% if switch.alive %>
+                    <!--<div class="uptime"><%= switch.uptime_text %></div>-->
+                    <div class="bandwidth"><%= (switch.bandwidth_down * 1024).round(2) %>GiB | <%= (switch.bandwidth_up * 1024).round(2) %>GiB</div>
+                    <div class="traffic"><%= switch.downstream_traffic_text %> | <%= switch.upstream_traffic_text %></div>
+                  <% end %>
+                  <div class="ip"><%= switch.ip %></div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

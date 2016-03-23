@@ -1,0 +1,29 @@
+<%= form_for(@switch, remote: true) do |f| %>
+  <div class="row">
+    <div class="input-field col s2">
+      <%= f.text_field :description %>
+      <%= f.label :description %>
+    </div>
+
+    <div class="input-field col s1">
+      <%= f.text_field :source %>
+      <%= f.label :source %>
+    </div>
+
+    <div class="input-field col s2">
+      <%= f.select :destination, switches_options(@switch.destination) %>
+      <%= f.label :destination %>
+    </div>
+
+    <div class="input-field col s2">
+      <%= f.select :group_id, options_for_select(@groups.map{ |g| [g.name, g.id]}, @switch.group_id) %>
+      <%= f.label :group_id %>
+    </div>
+
+    <div class="input-field col s1">
+      <button class="btn waves-effect waves-light" type="submit" name="action">Save
+        <i class="material-icons right">send</i>
+      </button>
+    </div>
+  </div>
+<% end %>

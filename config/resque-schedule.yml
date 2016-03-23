@@ -1,0 +1,4 @@
+TrafficScheduler:
+  every: 60s
+  class: "TrafficScheduler"
+  queue: "high"

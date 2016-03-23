@@ -1,0 +1,199 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "materialize";
+@import "materialize/extras/nouislider";
+
+body {
+  background: #111;
+  font-family: 'Open Sans', sans-serif;
+  color: #f3f3f3;
+  overflow: hidden;
+}
+
+h2 {
+  width: 100%;
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 11px;
+}
+
+
+#modal {
+  overflow-y: visible;
+  background: #111;
+}
+
+.switches {
+  padding: 5px;
+}
+
+
+.groups {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.group h3 {
+  margin: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+}
+
+.group h4 {
+  margin: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+}
+
+.switch_group {
+  display: flex;
+  flex-flow: column wrap;
+  height: 940px;
+}
+  
+.blink {
+  background: red;
+}
+
+.highload {
+  position:absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  background: yellow;
+  opacity: 0.3;
+}
+
+.someload {
+  position:absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  background: yellow;
+  opacity: 0.05;
+}
+
+div.switch {
+  margin-right: 5px;
+  margin-bottom: 5px;
+  overflow: hidden;
+  height: 67px;
+  border: 1px solid #333;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  font-size: 12px;
+  position: relative;
+  width: 200px;
+  
+  &.level_2 {
+    width: 190px;
+    margin-left: 10px;
+  }
+  
+  &.level_3 {
+    width: 180px;
+    margin-left: 20px;
+  }
+
+  &.level_4 {
+    width: 170px;
+    margin-left: 30px;
+  }
+
+  &.level_4 {
+    width: 160px;
+    margin-left: 40px;
+  }
+
+  .blob {
+    height: 67px;
+    width: 5px;
+    float: left;
+
+    &.yellow {
+      background-color: yellow;
+    }
+  }
+
+  .content {
+    width: 150px;  
+    float: left;
+  }
+
+  .desc {
+    position: absolute;
+    left: 8px;
+    top: 0px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .traffic {
+    position: absolute;
+    top: 15px;
+    left: 8px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .ip {
+     position: absolute;
+     bottom: 0;
+     left: 0;
+     width: 100%;
+     text-align: center;
+  }
+
+  .uptime {
+    position: absolute;
+    left: 8px;
+    bottom: 0px;
+  }
+
+  .bandwidth {
+    position: absolute;
+    left: 8px;
+    top: 32px;
+    width: 100%;
+    text-align: center;
+  }
+
+  a.switch {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 999;
+
+    &:hover {
+      background: #444444;
+      opacity: 0.4
+    }
+  }
+
+}
+

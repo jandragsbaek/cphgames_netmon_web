@@ -1,0 +1,5 @@
+var modal = $('#modal');
+modal.html('<%= escape_javascript(render('show_form')) %>');
+$('#modal select').material_select();
+Materialize.updateTextFields();
+modal.openModal();

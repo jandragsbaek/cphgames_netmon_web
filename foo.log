@@ -1,0 +1,13 @@
+resque-pool-manager[cphgamesweb][17860]: Resque Pool running in development environment
+resque-pool-worker[cphgamesweb][17863]: Starting worker NAYENA:17863:high
+resque-pool-worker[cphgamesweb][17866]: Starting worker NAYENA:17866:medium
+resque-pool-worker[cphgamesweb][17870]: Starting worker NAYENA:17870:medium
+resque-pool-worker[cphgamesweb][17873]: Starting worker NAYENA:17873:medium
+resque-pool-worker[cphgamesweb][17876]: Starting worker NAYENA:17876:medium
+resque-pool-worker[cphgamesweb][17879]: Starting worker NAYENA:17879:low
+resque-pool-manager[cphgamesweb][17860]: started manager
+resque-pool-manager[cphgamesweb][17860]: Pool contains worker PIDs: [17863, 17866, 17870, 17873, 17876, 17879, 17882]
+resque-pool-worker[cphgamesweb][17882]: Starting worker NAYENA:17882:low
+resque-pool-manager[cphgamesweb][17860]: INT: immediate shutdown (graceful worker shutdown)
+resque-pool-manager[cphgamesweb][17860]: Sending QUIT to all workers
+resque-pool-manager[cphgamesweb][17860]: manager finished
